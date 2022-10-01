@@ -24,11 +24,11 @@ const MaterialFormComponent = (props) => {
     console.log(formValues);
   };
     return (
-      <Card elevation={4} 
-        sx={{width: "100%", height: "400px", borderRadius: "5px", border: "2px solid white", background: "transparent"}}
+      <Card elevation={1} 
+        sx={{width: "100%", padding:"15px", height: "400px", borderRadius: "20px", border: "2px solid white"}}
       > 
             <form onSubmit={handleSubmit} >
-              <Grid container sx={{ border: "2px solid blue", gap: "15px"}} alignItems="center" justifyContent="center" direction="column" >
+              <Grid container sx={{ border: "2px solid green", gap: "15px"}} alignItems="center" justifyContent="center" direction="column" >
                   <Grid item>                      
                       <TextField
                         sx={{width: "450px",  background: "white", borderRadius: "5PX", boxShadow: 5}}
@@ -71,7 +71,7 @@ const MaterialFormComponent = (props) => {
               <Grid container sx={{ marginTop:"20PX", height:"100%", border: "2px solid black"}} alignItems="center" direction="column" >
                 <Grid item>
                     <Button variant="contained" color="primary" type="submit" style={{
-                        backgroundColor: "green",
+                        background: "#f3a415",
                         margin: "5px"
                     }}>
                         Send Message

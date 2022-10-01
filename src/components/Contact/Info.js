@@ -10,14 +10,15 @@ import PlaceIcon from '@mui/icons-material/Place';
 import EmailIcon from '@mui/icons-material/Email';
 import LocalPhoneOutlinedIcon from '@mui/icons-material/LocalPhoneOutlined';
 import Card from "@mui/material/Card";
+import Divider from '@mui/material/Divider';
 
 function ContactInfo() {
   return (
     <Card
-      sx={{ display: "flex", flexDirection: "column", justifyContent:"flex-start", alignItems:"center", width: "100%", height: "400px", borderRadius: "5px", border: "2px solid white", background: "transparent"}}
+      sx={{ padding: "20px",gap: "20px",display: "flex", flexDirection: "column", justifyContent:"flex-start", alignItems:"center", width: "100%", height: "400px", borderRadius: "15px", border: "2px solid red"}}
       elevation={4} 
     >
-      <h3> Contact Info </h3>
+      <h2> Contact Info </h2>
       <List sx={{ width: '100%', maxWidth: 360 }}>
         <ListItem>
           <ListItemAvatar>
@@ -44,6 +45,7 @@ function ContactInfo() {
           <ListItemText primary="jhonatanjcca@gmail.com" />
         </ListItem>
       </List>
+      <Divider variant="middle" flexItem />
     </Card>
   );
 }
