@@ -2,6 +2,27 @@ import React, { useState } from "react";
 import { TextField, Button } from '@mui/material';
 import Card from "@mui/material/Card";
 import { Grid } from "@mui/material";
+import { styled } from '@mui/material/styles';
+
+const CssTextField = styled(TextField)({
+  '& label.Mui-focused': {
+    color: '#217276',
+  },
+  '& .MuiInput-underline:after': {
+    borderBottomColor: '#217276',
+  },
+  '& .MuiOutlinedInput-root': {
+    '& fieldset': {
+      borderColor: '#217276',
+    },
+    '&:hover fieldset': {
+      borderColor: '#217276',
+    },
+    '&.Mui-focused fieldset': {
+      borderColor: '#217276',
+    },
+  },
+});
 
 const MaterialFormComponent = (props) => {
   const initialValues = {
@@ -24,14 +45,44 @@ const MaterialFormComponent = (props) => {
     console.log(formValues);
   };
     return (
-      <Card elevation={1} 
-        sx={{width: "100%", padding:"15px", height: "400px", borderRadius: "20px", border: "2px solid white"}}
+      <Card elevation={5} 
+        sx={{
+          width: "100%",
+          padding:"50px", 
+          height: "450px", 
+          borderRadius: "20px", 
+		  '@media screen and (max-width: 500px)': {
+            padding:"20px",
+          } 
+		}}
       > 
             <form onSubmit={handleSubmit} >
-              <Grid container sx={{ border: "2px solid green", gap: "15px"}} alignItems="center" justifyContent="center" direction="column" >
-                  <Grid item>                      
-                      <TextField
-                        sx={{width: "450px",  background: "white", borderRadius: "5PX", boxShadow: 5}}
+              <Grid container 
+                sx={{ 
+				  overflow: "auto",
+                  display: "flex", 
+                  alignItems:"center",
+                  gap: "15px", 
+                  width: "100%",
+                  '@media screen and (max-width: 500px)': {
+                    width: "200px",
+                    alignItems:"center",
+                  } 
+                }} 
+                alignItems="center" justifyContent="center" direction="column" >
+                  <Grid item>
+                      
+                      <CssTextField
+                        sx={{
+                          marginTop: "10px",
+                          width: "450px", 
+                          background: "white", 
+                          borderRadius: "5PX", 
+                          boxShadow: 4,
+                          '@media screen and (max-width: 500px)': {
+                            width: "200px",
+                          } 
+                        }}
                         id="fullName"
                         name="fullName"
                         label="Full Name"
@@ -41,8 +92,8 @@ const MaterialFormComponent = (props) => {
                       />
                   </Grid>
                   <Grid item>
-                      <TextField
-                        sx={{color: "red", width: "450px",  background: "white", borderRadius: "5PX", boxShadow: 9}}
+                      <CssTextField
+                        sx={{width: "450px",  background: "white", borderRadius: "5PX", boxShadow: 4}}
                         id="email"
                         name="email"
                         label="Email"
@@ -54,8 +105,8 @@ const MaterialFormComponent = (props) => {
                   </Grid>
                 
                   <Grid item>
-                    <TextField
-                      sx={{width: "450px",  background: "white", borderRadius: "5PX", boxShadow: 9}}
+                    <CssTextField
+                      sx={{width: "450px",  background: "white", borderRadius: "5PX", boxShadow: 4}}
                       id="message"
                       name="message"
                       label="Message"
@@ -68,7 +119,7 @@ const MaterialFormComponent = (props) => {
                   </Grid>
               </Grid>
 
-              <Grid container sx={{ marginTop:"20PX", height:"100%", border: "2px solid black"}} alignItems="center" direction="column" >
+              <Grid container sx={{ marginTop:"20PX", height:"100%"}} alignItems="center" direction="column" >
                 <Grid item>
                     <Button variant="contained" color="primary" type="submit" style={{
                         background: "#f3a415",

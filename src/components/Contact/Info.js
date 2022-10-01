@@ -15,8 +15,8 @@ import Divider from '@mui/material/Divider';
 function ContactInfo() {
   return (
     <Card
-      sx={{ padding: "20px",gap: "20px",display: "flex", flexDirection: "column", justifyContent:"flex-start", alignItems:"center", width: "100%", height: "400px", borderRadius: "15px", border: "2px solid red"}}
-      elevation={4} 
+      elevation={5} 
+      sx={{ padding: "50px",gap: "20px",display: "flex", flexDirection: "column", justifyContent:"flex-start", alignItems:"center", width: "100%", height: "450px", borderRadius: "15px", }}
     >
       <h2> Contact Info </h2>
       <List sx={{ width: '100%', maxWidth: 360 }}>

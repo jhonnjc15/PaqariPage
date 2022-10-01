@@ -22,7 +22,7 @@
 }
 
 .contact_container{
-  /*border: 2px solid red;*/
+  height: 500px;
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -30,12 +30,15 @@
 
 .form_container{
   /*border: 2px solid yellow;*/
+  display:flex;
+  flex-direction: column;
+  justify-content:center;
   padding: 20px;
   width: 60%;
 }
 .divider_vertical{
   display: block;
-  height: 380px;
+  height: 80%;
   align-self:center;
   background: black;
 }
@@ -61,6 +64,7 @@
   }
   .contact_container{
     /*border: 2px solid red;*/
+    height: auto;
     display: flex;
 	width:100%;
     flex-direction: column;
@@ -95,6 +99,7 @@
   }
   .contact_container{
     /*border: 2px solid red;*/
+    height: auto;
     display: flex;
 	width:100%;
     flex-direction: column;
@@ -129,6 +134,7 @@
   }
   .contact_container{
     /*border: 2px solid red;*/
+    height: auto;
     display: flex;
 	width:100%;
     flex-direction: column;
