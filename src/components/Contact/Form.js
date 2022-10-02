@@ -3,7 +3,7 @@ import { TextField, Button } from '@mui/material';
 import Card from "@mui/material/Card";
 import { Grid } from "@mui/material";
 import { styled } from '@mui/material/styles';
-
+import "./Form.css"
 const CssTextField = styled(TextField)({
   '& label.Mui-focused': {
     color: '#217276',
@@ -51,21 +51,28 @@ const MaterialFormComponent = (props) => {
           padding:"50px", 
           height: "450px", 
           borderRadius: "20px", 
-		  '@media screen and (max-width: 500px)': {
+          border: "2px solid green",
+		  '@media screen and (max-width: 600px)': {
+            padding:"20px",
+          },
+          '@media screen and (max-width: 800px) and (min-width:600px)': {
+            display: "flex",
+            justifyContent: "center",
             padding:"20px",
           } 
+ 
 		}}
       > 
-            <form onSubmit={handleSubmit} >
+            <form className="formcss" onSubmit={handleSubmit} >
               <Grid container 
                 sx={{ 
-				  overflow: "auto",
+                  border: "2px solid blue",
                   display: "flex", 
                   alignItems:"center",
-                  gap: "15px", 
-                  width: "100%",
-                  '@media screen and (max-width: 500px)': {
-                    width: "200px",
+                  ap: "15px", 
+                  width: "auto",
+                  '@media screen and (max-width: 600px)': {
+                    width: "auto",
                     alignItems:"center",
                   } 
                 }} 
@@ -74,14 +81,13 @@ const MaterialFormComponent = (props) => {
                       
                       <CssTextField
                         sx={{
-                          marginTop: "10px",
-                          width: "450px", 
+                          width: "auto", 
                           background: "white", 
                           borderRadius: "5PX", 
                           boxShadow: 4,
-                          '@media screen and (max-width: 500px)': {
-                            width: "200px",
-                          } 
+                          '@media screen and (min-width: 750px)': {
+                            width: "450px",
+                          }
                         }}
                         id="fullName"
                         name="fullName"
@@ -93,7 +99,15 @@ const MaterialFormComponent = (props) => {
                   </Grid>
                   <Grid item>
                       <CssTextField
-                        sx={{width: "450px",  background: "white", borderRadius: "5PX", boxShadow: 4}}
+                        sx={{
+                         width: "auto", 
+                         background: "white", 
+                         borderRadius: "5PX", 
+                         boxShadow: 4,
+                         '@media screen and (min-width: 750px)': {
+                            width: "450px",
+                          }
+                       }}
                         id="email"
                         name="email"
                         label="Email"
@@ -106,7 +120,15 @@ const MaterialFormComponent = (props) => {
                 
                   <Grid item>
                     <CssTextField
-                      sx={{width: "450px",  background: "white", borderRadius: "5PX", boxShadow: 4}}
+                      sx={{
+                        width: "auto", 
+                        background: "white", 
+                        borderRadius: "5PX", 
+                        boxShadow: 4,
+                        '@media screen and (min-width: 750px)': {
+                          width: "450px",
+                        }
+                      }}
                       id="message"
                       name="message"
                       label="Message"
